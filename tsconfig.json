@@ -9,7 +9,8 @@
       "@employee/*": ["app/employee/*"],
       "@admin/*": ["app/admin/*"],
       "@customer/*": ["app/customer/*"],
-      "@service": ["app/services/bankservice.service"]
+      "@userservice": ["app/services/account.service"],
+      "@accountservice": ["app/services/user.service"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
