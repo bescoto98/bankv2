@@ -3,24 +3,24 @@ import { User } from './user';
 export interface Information {
 
   public infoid:number;
-  public ssn:String;
-  public address:String;
-  public city:String;
-  public state:String;
-  public zip:String;
-  public phone:String;
-  public email:String;
+  public ssn:string;
+  public address:string;
+  public city:string;
+  public state:string;
+  public zip:string;
+  public phone:string;
+  public email:string;
   public owner:User;
 
   constructor(
     infoid:number,
-    ssn:String,
-    address:String,
-    city:String,
-    state:String,
-    zip:String,
-    phone:String,
-    email:String,
+    ssn:string,
+    address:string,
+    city:string,
+    state:string,
+    zip:string,
+    phone:string,
+    email:string,
     owner:User
   ){
       this.infoid=infoid,

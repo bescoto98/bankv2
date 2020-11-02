@@ -9,7 +9,7 @@ export interface Transaction {
     fromAccount:number,
     toAccount:number,
     amount:number,
-    transtype:String
+    transtype:string
   ){
       this.fromAccount=fromAccount,
       this.toAccount=toAccount,

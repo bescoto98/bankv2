@@ -1,32 +1,32 @@
 export interface NewUser {
 
-  public firstname:String;
-  public lastname:String;
-  public username:String;
-  public password:String;
-  // public role:String;
+  public firstname:string;
+  public lastname:string;
+  public username:string;
+  public password:string;
+  // public role:string;
   public role?:"ADMIN" | "EMPLOYEE" | "CUSTOMER";
-  public ssn:String;
-  public address:String;
-  public city:String;
-  public state:String;
-  public zip:String;
-  public phone:String;
-  public email:String;
+  public ssn:string;
+  public address:string;
+  public city:string;
+  public state:string;
+  public zip:string;
+  public phone:string;
+  public email:string;
 
   constructor(
-    firstname:String,
-    lastname:String,
-    username:String,
-    password:String,
-    role:String,
-    ssn:String,
-    address:String,
-    city:String,
-    state:String,
-    zip:String,
-    phone:String,
-    email:String,
+    firstname:string,
+    lastname:string,
+    username:string,
+    password:string,
+    role:string,
+    ssn:string,
+    address:string,
+    city:string,
+    state:string,
+    zip:string,
+    phone:string,
+    email:string,
 
   ){
       this.firstname=firstname,

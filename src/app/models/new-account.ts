@@ -6,7 +6,7 @@ export interface NewAccount {
 
   constructor(
     balance:number,
-    type:String,
+    type:string,
     ownerid:number
   ){
     this.balance=balance,

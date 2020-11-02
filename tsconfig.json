@@ -2,7 +2,15 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
+    "paths":{
+      "@landing/*": ["app/landing/*"],
+      "@models/*": ["app/models/*"],
+      "@employee/*": ["app/employee/*"],
+      "@admin/*": ["app/admin/*"],
+      "@customer/*": ["app/customer/*"],
+      "@service": ["app/services/bankservice.service"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

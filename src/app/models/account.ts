@@ -4,22 +4,22 @@ export interface Account {
 
   public accountid:number;
   public balance:number;
-  // public type:String;
-  // public status:String;
+  // public type:string;
+  // public status:string;
   public type?:"CHECKING" | "SAVINGS";
   public status?:"OPEN" | "CLOSED" | "PENDING";
-  public approvedby:String;
-  public createdon:String;
+  public approvedby:string;
+  public createdon:string;
   public owner:User;
 
 
   constructor(
     accountid:number,
     balance:number,
-    type:String,
-    status:String,
-    approvedby:String,
-    createdon:String,
+    type:string,
+    status:string,
+    approvedby:string,
+    createdon:string,
     owner:User
   ){
       this.accountid=accountid,
