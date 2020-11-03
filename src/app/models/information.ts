@@ -1,6 +1,6 @@
-import { User } from './user';
+import { User } from '@models/user';
 
-export interface Information {
+export class Information {
 
   public infoid:number;
   public ssn:string;
@@ -33,5 +33,4 @@ export interface Information {
       this.email=email,
       this.owner=owner,
   }
-
 }

@@ -1,11 +1,11 @@
-export interface NewUser {
+export class NewUser {
 
   public firstname:string;
   public lastname:string;
   public username:string;
   public password:string;
   // public role:string;
-  public role?:"ADMIN" | "EMPLOYEE" | "CUSTOMER";
+  public role:"ADMIN" | "EMPLOYEE" | "CUSTOMER";
   public ssn:string;
   public address:string;
   public city:string;
@@ -19,15 +19,14 @@ export interface NewUser {
     lastname:string,
     username:string,
     password:string,
-    role:string,
+    role:"ADMIN" | "EMPLOYEE" | "CUSTOMER",
     ssn:string,
     address:string,
     city:string,
     state:string,
     zip:string,
     phone:string,
-    email:string,
-
+    email:string
   ){
       this.firstname=firstname,
       this.lastname=lastname,

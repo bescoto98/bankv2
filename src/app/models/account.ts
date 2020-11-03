@@ -1,13 +1,13 @@
-import { User } from './user';
+import { User } from '@models/user';
 
-export interface Account {
+export class Account {
 
   public accountid:number;
   public balance:number;
   // public type:string;
   // public status:string;
-  public type?:"CHECKING" | "SAVINGS";
-  public status?:"OPEN" | "CLOSED" | "PENDING";
+  public type:"CHECKING" | "SAVINGS";
+  public status:"OPEN" | "CLOSED" | "PENDING";
   public approvedby:string;
   public createdon:string;
   public owner:User;
@@ -16,8 +16,8 @@ export interface Account {
   constructor(
     accountid:number,
     balance:number,
-    type:string,
-    status:string,
+    type:"CHECKING" | "SAVINGS",
+    status:"OPEN" | "CLOSED" | "PENDING",
     approvedby:string,
     createdon:string,
     owner:User

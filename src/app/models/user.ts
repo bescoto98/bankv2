@@ -1,4 +1,4 @@
-export interface User {
+export class User {
 
   public userid:number;
   public firstname:string;
@@ -6,7 +6,7 @@ export interface User {
   public username:string;
   public password:string;
   // public role:string;
-  public role?:"ADMIN" | "EMPLOYEE" | "CUSTOMER";
+  public role:"ADMIN" | "EMPLOYEE" | "CUSTOMER";
 
   constructor(
     userid:number,
@@ -14,7 +14,7 @@ export interface User {
     lastname:string,
     username:string,
     password:string,
-    role:string
+    role:"ADMIN" | "EMPLOYEE" | "CUSTOMER"
   ){
       this.userid=userid,
       this.firstname=firstname,
