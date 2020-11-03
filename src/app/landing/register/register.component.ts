@@ -11,6 +11,8 @@ import { NewAccount } from '@models/new-account';
 })
 export class RegisterComponent implements OnInit {
 
+  // placeholderText: string = "Enter...";
+  index:number = 1;
   newestUser: NewUser;
   createdUser: User;
   newAccount: NewAccount;
@@ -18,6 +20,17 @@ export class RegisterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  increaseIndex(){
+    this.index++;
+  }
+  decreaseIndex(){
+
+    if(this.index >= 2){
+        this.index--;
+    }
+
   }
 
 }

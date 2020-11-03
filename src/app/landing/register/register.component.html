@@ -1,14 +1,61 @@
 <h1>Register</h1>
+<!-- first section -->
+<div id="sectionOne" *ngIf="index==1">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="firstname">First Name:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Enter..." [value]="newestUser.firstname ? newestUser.firstname : null">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="lastname">Last Name:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Enter..." [value]="newestUser.lastname ? newestUser.lastname : null">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="ssn">SSN:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="###-##-####" [value]="newestUser.ssn ? newestUser.ssn : null">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="email">Email:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="example@example.com" [value]="newestUser.email ? newestUser.email : null">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="phonenum">Phone:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="###-###-####" [value]="newestUser.phone ? newestUser.phone : null">
+  </div>
+</div>
+<!-- end first section -->
 
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="firstname">First Name:</span>
+<!-- second section -->
+<div id="sectionTwo" *ngIf="index==2">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="username">Username:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Enter..." [value]="newestUser.username ? newestUser.username : null">
   </div>
-  <input type="text" class="form-control" placeholder="Enter...">
-</div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="lastname">Last Name:</span>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="password">Password:</span>
+    </div>
+    <input type="password" class="form-control" placeholder="Enter..." [value]="newestUser.password ? newestUser.password : null">
   </div>
-  <input type="text" class="form-control" placeholder="Enter...">
 </div>
+<!-- end second section -->
+
+<!-- prev next buttons -->
+<div class="d-flex flex-row justify-content-center" id="locationButtons">
+  <button type="button" name="button" id="prevbutton" class="btn btn-outline-info" (click)="decreaseIndex()" >Prev</button>
+  <button type="button" name="button" id="nextbutton" class="btn btn-outline-info" (click)="increaseIndex()">Next</button>
+</div>
+
+<!-- buttons end -->
