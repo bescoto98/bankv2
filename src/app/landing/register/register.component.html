@@ -1,56 +1,107 @@
 <h1>Register</h1>
 <!-- first section -->
-<div id="sectionOne" *ngIf="index==1">
+<div id="sectionOne" [hidden]="!(index==1)">
+  <!-- first name -->
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="firstname">First Name:</span>
     </div>
-    <input type="text" class="form-control" placeholder="Enter..." [value]="newestUser.firstname ? newestUser.firstname : null">
+    <input type="text" class="form-control" placeholder="Enter..." />
   </div>
+  <!-- lastname -->
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="lastname">Last Name:</span>
     </div>
-    <input type="text" class="form-control" placeholder="Enter..." [value]="newestUser.lastname ? newestUser.lastname : null">
+    <input type="text" class="form-control" placeholder="Enter...">
   </div>
+  <!-- ssn -->
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="ssn">SSN:</span>
     </div>
-    <input type="text" class="form-control" placeholder="###-##-####" [value]="newestUser.ssn ? newestUser.ssn : null">
+    <input type="text" class="form-control" placeholder="###-##-####">
   </div>
+  <!-- email -->
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="email">Email:</span>
     </div>
-    <input type="text" class="form-control" placeholder="example@example.com" [value]="newestUser.email ? newestUser.email : null">
+    <input type="text" class="form-control" placeholder="example@example.com" >
   </div>
+  <!-- phone number -->
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="phonenum">Phone:</span>
     </div>
-    <input type="text" class="form-control" placeholder="###-###-####" [value]="newestUser.phone ? newestUser.phone : null">
+    <input type="text" class="form-control" placeholder="###-###-####" >
   </div>
 </div>
 <!-- end first section -->
 
 <!-- second section -->
-<div id="sectionTwo" *ngIf="index==2">
+<div id="sectionTwo" [hidden]="!(index==2)">
+  <!-- username -->
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="username">Username:</span>
     </div>
-    <input type="text" class="form-control" placeholder="Enter..." [value]="newestUser.username ? newestUser.username : null">
+    <input type="text" class="form-control" placeholder="Enter..." >
   </div>
-
+  <!-- password -->
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="password">Password:</span>
     </div>
-    <input type="password" class="form-control" placeholder="Enter..." [value]="newestUser.password ? newestUser.password : null">
+    <input type="password" class="form-control" placeholder="Enter..." >
   </div>
 </div>
 <!-- end second section -->
+
+<!-- third section -->
+<div id="sectionThree" [hidden]="!(index==3)">
+  <!-- address -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="address">Address:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Enter..." >
+  </div>
+  <!-- city -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="city">City:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Enter..." >
+  </div>
+  <!-- state -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="State">State:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Ex: NY" >
+  </div>
+  <!-- zip -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="zip">ZIP:</span>
+    </div>
+    <input type="text" class="form-control" placeholder="#####" >
+  </div>
+</div>
+<!-- end third section -->
+
+<!-- fourth section -->
+<div id="sectionFour" [hidden]="!(index==4)">
+   <div class="form-group">
+    <label for="roleoptions">I am a:</label>
+    <select class="form-control" id="roleoptionselect">
+      <option>Customer</option>
+      <option>Employee</option>
+    </select>
+  </div>
+</div>
+<!-- end fourth section -->
 
 <!-- prev next buttons -->
 <div class="d-flex flex-row justify-content-center" id="locationButtons">
@@ -58,4 +109,7 @@
   <button type="button" name="button" id="nextbutton" class="btn btn-outline-info" (click)="increaseIndex()">Next</button>
 </div>
 
-<!-- buttons end -->
+<!-- submit button -->
+<div class="d-flex flex-row justify-content-center" *ngIf="index==4">
+  <button type="button" name="button" id="submitbutton" class="btn btn-outline-warning" (click)="makeUser()">Submit</button>
+</div>
