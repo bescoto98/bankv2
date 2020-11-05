@@ -17,19 +17,29 @@ export class RegisterComponent implements OnInit {
   index:number = 1;
   newestUser: NewUser;
   userCreated: User;
+  newestAccount: NewAccount;
 
   selectedRole;
+  selectedType;
+
   roles = [
     "EMPLOYEE",
     "CUSTOMER"
   ];
 
-  indexes = [
+  accountType = [
+    "CHECKING",
+    "SAVINGS"
+  ];
+
+  nav = [
     true,
     false,
     false,
+    false,
+    false,
     false
-  ]
+  ];
 
   constructor(
     private userservice:UserService,
@@ -45,7 +55,7 @@ export class RegisterComponent implements OnInit {
 
   increaseIndex(){
     // this.index++;
-    this.indexes[this.index] = true;
+    this.nav[this.index] = true;
     this.index++;
   }
 
@@ -53,18 +63,20 @@ export class RegisterComponent implements OnInit {
     this.newestUser.role = this.selectedRole;
   }
 
+  setAccountType(){
+    this.newestAccount.type = this.selectedType;
+  }
+
   makeUser(){
-    // console.log(this.newestUser);
-    // this.user = new User(
-    //   null, null, null,
-    //   null, null, null);
+
+    // check values
 
     this.userservice.addUser(this.newestUser).subscribe(
       (data: User) => {
         this.userCreated = data;
         // console.log(this.userCreated);
         if(this.userCreated.role === "CUSTOMER"){
-          this.addAccount();
+          this.createAccount();
         }
         else{
           alert("Please log in to access your account.")
@@ -73,8 +85,22 @@ export class RegisterComponent implements OnInit {
 
   }
 
-  addAccount() {
-    console.log("adding account");
+  createAccount() {
+    this.newestAccount = new NewAccount(null, null, this.userCreated.userid);
+
+    this.nav[0] = false;
+    this.nav[1] = false;
+    this.nav[2] = false;
+    this.nav[3] = false;
+    this.nav[4] = true;
+  }
+
+  sendAccount(){
+
+    // check values
+
+    console.log(this.newestAccount);
+
   }
 
 }

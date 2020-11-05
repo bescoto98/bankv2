@@ -1,4 +1,4 @@
-#sectionOne, #sectionTwo, #sectionThree, #sectionFour{
+.section {
   width: 50%;
   margin: auto;
 }
