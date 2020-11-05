@@ -31,6 +31,6 @@ export class Information {
       this.zip=zip,
       this.phone=phone,
       this.email=email,
-      this.owner=owner,
+      this.owner=owner
   }
 }

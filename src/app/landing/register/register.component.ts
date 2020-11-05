@@ -3,6 +3,9 @@ import { NewUser } from '@models/new-user';
 import { User } from '@models/user';
 import { NewAccount } from '@models/new-account';
 
+import { UserService } from '@userservice';
+import { AccountService } from '@accountservice';
+
 
 @Component({
   selector: 'app-register',
@@ -11,9 +14,9 @@ import { NewAccount } from '@models/new-account';
 })
 export class RegisterComponent implements OnInit {
 
-  // placeholderText: string = "Enter...";
   index:number = 1;
   newestUser: NewUser;
+  userCreated: User;
 
   selectedRole;
   roles = [
@@ -21,7 +24,16 @@ export class RegisterComponent implements OnInit {
     "CUSTOMER"
   ];
 
-  constructor() { }
+  indexes = [
+    true,
+    false,
+    false,
+    false
+  ]
+
+  constructor(
+    private userservice:UserService,
+    private accountservice:AccountService) { }
 
   ngOnInit(): void {
     this.newestUser = new NewUser(
@@ -29,22 +41,40 @@ export class RegisterComponent implements OnInit {
       null, null, null, null,
       null, null, null, null
     );
-    // this.newestUser.role = "CUSTOMER";
-    // console.log(this.newestUser);
   }
 
   increaseIndex(){
+    // this.index++;
+    this.indexes[this.index] = true;
     this.index++;
   }
 
   setRole(){
-    // console.log(this.selectedRole)
     this.newestUser.role = this.selectedRole;
   }
 
   makeUser(){
+    // console.log(this.newestUser);
+    // this.user = new User(
+    //   null, null, null,
+    //   null, null, null);
 
-    console.log(this.newestUser);
+    this.userservice.addUser(this.newestUser).subscribe(
+      (data: User) => {
+        this.userCreated = data;
+        // console.log(this.userCreated);
+        if(this.userCreated.role === "CUSTOMER"){
+          this.addAccount();
+        }
+        else{
+          alert("Please log in to access your account.")
+        }
+      })
+
+  }
+
+  addAccount() {
+    console.log("adding account");
   }
 
 }

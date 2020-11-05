@@ -12,7 +12,7 @@ import { Transaction } from '@models/transaction';
 })
 export class AccountService {
 
-  const bankpath = "http://localhost:8999/badbank/account/";
+  bankpath = "http://localhost:8999/badbank/account/";
 
   constructor(private http: HttpClient) { }
 

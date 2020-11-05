@@ -12,7 +12,7 @@ import { Information } from '@models/information';
 })
 export class UserService {
 
-  const bankpath = "http://localhost:8999/badbank/user/";
+  bankpath = "http://localhost:8999/badbank/user/";
 
   constructor(private http: HttpClient) { }
 

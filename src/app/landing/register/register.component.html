@@ -1,6 +1,6 @@
-<h1>Register</h1>
+<h1 class="text-center text-info sticky-top p-3 mb-2 bg-light">Register</h1>
 <!-- first section -->
-<div id="sectionOne" *ngIf="index==1">
+<div id="sectionOne" *ngIf="indexes[0]">
   <!-- first name -->
   <div class="input-group mb-3">
     <div class="input-group-prepend">
@@ -40,7 +40,7 @@
 <!-- end first section -->
 
 <!-- second section -->
-<div id="sectionTwo" *ngIf="index==2">
+<div id="sectionTwo" *ngIf="indexes[1]">
   <!-- username -->
   <div class="input-group mb-3">
     <div class="input-group-prepend">
@@ -59,7 +59,7 @@
 <!-- end second section -->
 
 <!-- third section -->
-<div id="sectionThree" *ngIf="index==3">
+<div id="sectionThree" *ngIf="indexes[2]">
   <!-- address -->
   <div class="input-group mb-3">
     <div class="input-group-prepend">
@@ -92,7 +92,7 @@
 <!-- end third section -->
 
 <!-- fourth section -->
-<div id="sectionFour" *ngIf="index==4">
+<div id="sectionFour" *ngIf="indexes[3]">
    <div class="form-group">
     <label for="roleoptions">I am a:</label>
     <select class="form-control" [(ngModel)]="selectedRole" (change)="setRole()">
@@ -104,11 +104,11 @@
 <!-- end fourth section -->
 
 <!-- prev next buttons -->
-<div class="d-flex flex-row justify-content-center" *ngIf="!(index==4)">
+<div class="d-flex flex-row justify-content-center" *ngIf="!indexes[3]">
   <button type="button" name="button" id="nextbutton" class="btn btn-outline-info" (click)="increaseIndex()">Next</button>
 </div>
 
 <!-- submit button -->
-<div class="d-flex flex-row justify-content-center" *ngIf="index==4">
+<div class="d-flex flex-row justify-content-center" *ngIf="indexes[3]">
   <button type="button" name="button" id="submitbutton" class="btn btn-outline-warning" (click)="makeUser()">Submit</button>
 </div>
