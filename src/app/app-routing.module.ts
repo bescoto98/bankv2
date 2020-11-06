@@ -14,8 +14,8 @@ const routes: Routes = [
     component:RegisterComponent },
 
   { path: 'login',
-    component:LoginComponent  
-  }
+    component:LoginComponent }
+
 ];
 
 @NgModule({

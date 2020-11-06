@@ -5,11 +5,12 @@ import { RegisterComponent } from './register/register.component';
 
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, RegisterComponent, LoginComponent],
+  declarations: [HomeComponent, RegisterComponent, LoginComponent, HomeNavbarComponent],
   imports: [
     CommonModule,
     FormsModule
