@@ -12,10 +12,12 @@ import { AdminModule } from '@admin/admin.module';
 import { CustomerModule } from '@customer/customer.module';
 import { EmployeeModule } from '@employee/employee.module';
 import { LandingModule } from '@landing/landing.module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent
   ],
   imports: [
     FormsModule,

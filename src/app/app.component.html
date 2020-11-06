@@ -2,15 +2,5 @@
 <a routerLinkActive="active" routerLink="register" class="navlink">Register</a>
 <a class="navlink">Login</a>
 </div> -->
-<ul ngbNav #nav="ngbNav" class="nav-tabs">
-  <li ngbNavItem>
-    <a ngbNavLink routerLinkActive="active" routerLink="" id="navthing">Home</a>
-  </li>
-  <li ngbNavItem>
-    <a ngbNavLink routerLinkActive="active" routerLink="register">Register</a>
-  </li>
-  <li ngbNavItem>
-    <a ngbNavLink>Login</a>
-  </li>
-</ul>
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>
