@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { LandingModule } from '@landing/landing.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LandingModule } from '@landing/landing.module';
     ReactiveFormsModule,
     // order by how you want it to hit
     LandingModule,
-    AppRoutingModule,
+    AdminModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
