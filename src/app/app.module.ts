@@ -18,9 +18,11 @@ import { LandingModule } from '@landing/landing.module';
     FormsModule,
     NgbModule,
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // order by how you want it to hit
+    LandingModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

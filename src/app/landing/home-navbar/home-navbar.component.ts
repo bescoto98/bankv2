@@ -18,11 +18,11 @@ export class HomeNavbarComponent implements OnInit {
   }
 
   register(){
-    this.router.navigate(['register']);
+    this.router.navigate(['/register']);
   }
 
   login(){
-    this.router.navigate(['login']);
+    this.router.navigate(['/login']);
   }
 
 }
