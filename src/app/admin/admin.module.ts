@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminRootComponent } from './admin-root/admin-root.component';
@@ -14,6 +15,7 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
   declarations: [AdminRootComponent, AdminAccountsComponent, AdminUsersComponent, AdminInfoComponent, AdminDashComponent, AdminNavComponent],
   imports: [
     CommonModule,
+    FormsModule,
     AdminRoutingModule
   ]
 })

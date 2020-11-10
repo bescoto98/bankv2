@@ -12,7 +12,7 @@ const adminRoutes: Routes = [
     path: 'a', component: AdminRootComponent,
     children:
     [
-      { path: 'dashboard', component: AdminDashComponent },
+      { path: '', component: AdminDashComponent },
       { path: 'user', component: AdminUsersComponent },
           // children: [ path: ':id', component]},
       { path: 'account', component: AdminAccountsComponent },

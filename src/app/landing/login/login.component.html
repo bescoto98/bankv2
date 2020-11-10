@@ -1,6 +1,6 @@
 <app-home-navbar></app-home-navbar>
 <!-- <h1 class="text-center text-info mx-auto border border-info p-3 m-2" style="width: 30%;">Please log in</h1> -->
-<div class="m-5">
+<div class="m-5" *ngIf="!dev">
 
   <div class="input-group m-3 mx-auto" style="width: 50%;">
     <div class="input-group-prepend">
@@ -14,4 +14,10 @@
     </div>
     <input type="password" class="form-control" placeholder="Enter..." aria-label="Password" >
   </div>
+</div>
+
+<div class="m-5 mx-auto" *ngIf="dev">
+  <button type="button" name="button" class="btn btn-warning" (click)="aDash()">Admin</button>
+  <button type="button" name="button" class="btn btn-warning">Employee</button>
+  <button type="button" name="button" class="btn btn-warning">Customer</button>
 </div>

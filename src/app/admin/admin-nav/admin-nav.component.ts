@@ -30,4 +30,8 @@ export class AdminNavComponent implements OnInit {
 
   }
 
+  logout() {
+    this.router.navigate(['home']);
+  }
+
 }
