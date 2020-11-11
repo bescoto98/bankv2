@@ -5,7 +5,7 @@ export class NewUser {
   public username:string;
   public password:string;
   // public role:string;
-  public role:"ADMIN" | "EMPLOYEE" | "CUSTOMER";
+  public role:string;
   public ssn:string;
   public address:string;
   public city:string;
@@ -19,7 +19,7 @@ export class NewUser {
     lastname:string,
     username:string,
     password:string,
-    role:"ADMIN" | "EMPLOYEE" | "CUSTOMER",
+    role:string,
     ssn:string,
     address:string,
     city:string,

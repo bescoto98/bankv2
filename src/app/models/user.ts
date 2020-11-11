@@ -5,8 +5,7 @@ export class User {
   public lastname:string;
   public username:string;
   public password:string;
-  // public role:string;
-  public role:"ADMIN" | "EMPLOYEE" | "CUSTOMER";
+  public role:string;
 
   constructor(
     userid:number,
@@ -14,7 +13,7 @@ export class User {
     lastname:string,
     username:string,
     password:string,
-    role:"ADMIN" | "EMPLOYEE" | "CUSTOMER"
+    role:string
   ){
       this.userid=userid,
       this.firstname=firstname,

@@ -3,8 +3,8 @@ import { NewUser } from '@models/new-user';
 import { User } from '@models/user';
 import { NewAccount } from '@models/new-account';
 
-import { UserService } from '@userservice';
-import { AccountService } from '@accountservice';
+import { UserService } from '@service/user.service';
+import { AccountService } from '@service/account.service';
 
 
 @Component({

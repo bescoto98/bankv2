@@ -4,10 +4,8 @@ export class Account {
 
   public accountid:number;
   public balance:number;
-  // public type:string;
-  // public status:string;
-  public type:"CHECKING" | "SAVINGS";
-  public status:"OPEN" | "CLOSED" | "PENDING";
+  public type:string;
+  public status:string;
   public approvedby:string;
   public createdon:string;
   public owner:User;
@@ -16,8 +14,8 @@ export class Account {
   constructor(
     accountid:number,
     balance:number,
-    type:"CHECKING" | "SAVINGS",
-    status:"OPEN" | "CLOSED" | "PENDING",
+    type:string,
+    status:string,
     approvedby:string,
     createdon:string,
     owner:User

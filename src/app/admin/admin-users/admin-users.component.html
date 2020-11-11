@@ -11,22 +11,29 @@
   </div>
   <div class="col-sm-6">
     <!-- filter -->
-    <div class="card p-3 text-center">
-      <h4 class="card-header text-info">Filter</h4>
+    <div class="card p-3">
+      <h4 class="card-header text-info text-center">Filter</h4>
       <!-- <div class="card-body"> -->
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush text-left">
+          <li class="list-group-item">
+            <!-- admin -->
+            <input class="form-check-input" type="checkbox" id="adminCheck" [(ngModel)]="showAdmins">
+            <label class="form-check-label" for="adminCheck">
+              Admins</label>
+          </li>
           <li class="list-group-item">
             <!-- Employee -->
-            <input class="form-check-input" type="checkbox" value=1 id="employeeCheck" [(ngModel)]="showEmployees">
+            <input class="form-check-input" type="checkbox" id="employeeCheck" [(ngModel)]="showEmployees">
             <label class="form-check-label" for="employeeCheck">
               Employees</label>
           </li>
           <li class="list-group-item">
             <!-- customer -->
-            <input class="form-check-input" type="checkbox" value=2 id="customerCheck" [(ngModel)]="showCustomers">
+            <input class="form-check-input" type="checkbox" id="customerCheck" [(ngModel)]="showCustomers">
             <label class="form-check-label" for="customerCheck">
               Customers</label>
           </li>
+          <!-- apply button -->
           <li class="list-group-item">
             <button type="button" name="button" class="btn btn-info" (click)="filterUsers()">Apply</button>
           </li>

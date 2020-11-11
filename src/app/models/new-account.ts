@@ -1,12 +1,12 @@
 export class NewAccount {
 
   public balance:number;
-  public type:"CHECKING" | "SAVINGS";
+  public type:string;
   public ownerid:number;
 
   constructor(
     balance:number,
-    type:"CHECKING" | "SAVINGS",
+    type:string,
     ownerid:number
   ){
     this.balance=balance,
