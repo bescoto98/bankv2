@@ -14,12 +14,13 @@ export class AdminNavComponent implements OnInit {
   }
 
   goDash() {
-    this.router.navigate(['a','dashboard']);
+    this.router.navigate(['a']);
 
   }
 
-  goUsers() {
-    this.router.navigate(['a','user']);
+  goUsers(usertype:string) {
+    // this.router.navigate(['a','user']);
+    this.router.navigate(['a/user',usertype]);
   }
 
   goAccounts() {

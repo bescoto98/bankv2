@@ -7,7 +7,13 @@
         <button type="button" name="button" class="btn btn-info mr-2" (click)="goDash()">Dashboard</button>
       </li>
       <li class="nav-item">
-        <button type="button" name="button" class="btn btn-info mr-2" (click)="goUsers()">View Users</button>
+        <!-- <button type="button" name="button" class="btn btn-info mr-2" (click)="goUsers()">View Users</button> -->
+        <select class="btn btn-info dropdown-toggle mr-2">
+          <!-- <option *ngFor="let s of sortByValues" [ngValue]="s.val">{{s.type}}</option> -->
+          <option disabled selected>View Users</option>
+          <option (click)="goUsers('e')">Employees</option>
+          <option (click)="goUsers('c')">Customers</option>
+      </select>
       </li>
       <li class="nav-item">
         <button type="button" name="button" class="btn btn-info mr-2" (click)="goAccounts()">View Accounts</button>

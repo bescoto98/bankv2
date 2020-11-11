@@ -13,8 +13,7 @@ const adminRoutes: Routes = [
     children:
     [
       { path: '', component: AdminDashComponent },
-      { path: 'user', component: AdminUsersComponent },
-          // children: [ path: ':id', component]},
+      { path: 'user/:utype', component: AdminUsersComponent },
       { path: 'account', component: AdminAccountsComponent },
       { path: ':id', component: AdminInfoComponent }
     ]

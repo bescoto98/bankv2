@@ -1,46 +1,14 @@
 <!-- filters -->
-<div class="row mx-auto w-75">
-  <div class="col-sm-6">
-    <!-- sort -->
-    <div class="card p-3 text-center">
-      <h4 class="card-header text-info">Sort</h4>
-        <select class="btn btn-outline-light dropdown-toggle" [(ngModel)]="sortBy" (change)="goSort()">
-          <option *ngFor="let s of sortByValues" [ngValue]="s.val">{{s.type}}</option>
-      </select>
-    </div>
+<div class="mx-auto w-50 m-2">
+
+  <!-- sort -->
+  <div class="card p-3 text-center">
+    <h4 class="card-header text-info">Sort</h4>
+      <select class="btn btn-outline-light dropdown-toggle m-2" [(ngModel)]="sortBy" (change)="goSort()">
+        <option *ngFor="let s of sortByValues" [ngValue]="s.val">{{s.type}}</option>
+    </select>
   </div>
-  <div class="col-sm-6">
-    <!-- filter -->
-    <div class="card p-3">
-      <h4 class="card-header text-info text-center">Filter</h4>
-      <!-- <div class="card-body"> -->
-        <ul class="list-group list-group-flush text-left">
-          <li class="list-group-item">
-            <!-- admin -->
-            <input class="form-check-input" type="checkbox" id="adminCheck" [(ngModel)]="showAdmins">
-            <label class="form-check-label" for="adminCheck">
-              Admins</label>
-          </li>
-          <li class="list-group-item">
-            <!-- Employee -->
-            <input class="form-check-input" type="checkbox" id="employeeCheck" [(ngModel)]="showEmployees">
-            <label class="form-check-label" for="employeeCheck">
-              Employees</label>
-          </li>
-          <li class="list-group-item">
-            <!-- customer -->
-            <input class="form-check-input" type="checkbox" id="customerCheck" [(ngModel)]="showCustomers">
-            <label class="form-check-label" for="customerCheck">
-              Customers</label>
-          </li>
-          <!-- apply button -->
-          <li class="list-group-item">
-            <button type="button" name="button" class="btn btn-info" (click)="filterUsers()">Apply</button>
-          </li>
-        </ul>
-      <!-- </div> -->
-    </div>
-  </div>
+
 </div>
 <!-- table -->
 <table class="table table-bordered w-75 m-5 mx-auto">
@@ -52,10 +20,12 @@
       <th scope="col">Role</th>
     </tr>
   </thead>
-  <tbody *ngFor="let user of fakeUsers">
-    <td>{{user.userid}}</td>
-    <td>{{user.lastname}}, {{user.firstname}}</td>
-    <td>{{user.username}}</td>
-    <td>{{user.role}}</td>
+  <tbody *ngFor="let user of listDisplayed">
+    <tr>
+      <td>{{user.userid}}</td>
+      <td>{{user.lastname}}, {{user.firstname}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.role}}</td>
+    </tr>
   </tbody>
 </table>
