@@ -14,7 +14,7 @@ const adminRoutes: Routes = [
     [
       { path: '', component: AdminDashComponent },
       { path: 'user/:utype', component: AdminUsersComponent },
-      { path: 'account', component: AdminAccountsComponent },
+      { path: 'accounts', component: AdminAccountsComponent },
       { path: ':id', component: AdminInfoComponent }
     ]
   }

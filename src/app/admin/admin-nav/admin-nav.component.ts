@@ -19,12 +19,11 @@ export class AdminNavComponent implements OnInit {
   }
 
   goUsers(usertype:string) {
-    // this.router.navigate(['a','user']);
     this.router.navigate(['a/user',usertype]);
   }
 
   goAccounts() {
-    this.router.navigate(['a','account']);
+    this.router.navigate(['a','accounts']);
   }
 
   goInfo(){

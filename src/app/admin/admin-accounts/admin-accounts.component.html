@@ -1,1 +1,78 @@
-<p>admin-accounts works!</p>
+<!-- filters -->
+<div class="row m-2">
+  <!-- sort -->
+  <div class="col-6">
+    <!-- <div class="mx-auto w-50 m-2"> -->
+
+    <div class="card p-3 text-center ml-4">
+      <h4 class="card-header text-info">Sort</h4>
+        <select class="btn btn-outline-light dropdown-toggle m-2" [(ngModel)]="sortBy" (change)="goSort()">
+          <option *ngFor="let s of sortByValues" [ngValue]="s.val">{{s.type}}</option>
+      </select>
+    </div>
+    <!-- </div> -->
+  </div>
+
+      <!-- filter -->
+  <div class="col-6">
+      <div class="card p-3 mr-4">
+        <h4 class="card-header text-info text-center">Filter</h4>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <p>Type:</p>
+              <div class="row justify-content-center">
+                <div class="col-sm-4">
+                <input type="checkbox" class="form-check-input" id="checkingBox" [(ngModel)]="showChecking" checked>
+                <label class="form-check-label" for="checkBox">Checking</label>
+                </div>
+                <div class="col-sm-4">
+              <input type="checkbox" class="form-check-input" id="savingBox" [(ngModel)]="showSavings" checked>
+              <label class="form-check-label" for="savingBox">Savings</label>
+                </div>
+              </div>
+          </li>
+          <li class="list-group-item">
+            <p>Status:</p>
+              <div class="row justify-content-center">
+                <div class="col-sm-4">
+                  <input type="checkbox" class="form-check-input" id="openBox" [(ngModel)]="showOpen" checked>
+                  <label class="form-check-label" for="openBox">Open</label>
+                </div>
+                <div class="col-sm-4">
+                  <input type="checkbox" class="form-check-input" id="closedBox" [(ngModel)]="showClosed" checked>
+                  <label class="form-check-label" for="closedBox">Closed</label>
+                </div>
+              </div>
+          </li>
+          <li class="list-group-item">
+            <button type="button" name="button" class="btn btn-info" id="applyFilterButton" (click)="filterValues()" >Apply</button>
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>
+<!-- table -->
+<table class="table table-bordered w-75 m-5 mx-auto">
+  <thead class="thead-dark text-center">
+    <tr>
+      <th scope="col">Account ID</th>
+      <th scope="col">Owner ID</th>
+      <th scope="col">Account Type</th>
+      <th scope="col">Status</th>
+      <th scope="col">Approved By</th>
+      <th scope="col">Date Created</th>
+      <th scope="col">Current Balance</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let account of allaccounts">
+    <tr>
+      <td>{{account.accountid}}</td>
+      <td>{{account.owner.userid}}</td>
+      <td>{{account.type}}</td>
+      <td>{{account.status}}</td>
+      <td>{{account.approvedby}}</td>
+      <td>{{account.createdon}}</td>
+      <td>{{account.balance}}</td>
+    </tr>
+  </tbody>
+</table>

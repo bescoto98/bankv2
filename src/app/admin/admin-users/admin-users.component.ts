@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { User } from '@models/user';
+import { Information } from '@models/information';
+
 @Component({
   selector: 'app-admin-users',
   templateUrl: './admin-users.component.html',
@@ -120,7 +123,11 @@ export class AdminUsersComponent implements OnInit {
 
   listDisplayed;
 
-  constructor( private route: ActivatedRoute)
+  chosenUser;
+  chosenUserInfo;
+  expandUser: boolean = false;
+
+  constructor(private route: ActivatedRoute)
   { this.route.params.subscribe( params => this.usertype = params.utype ); }
 
   ngOnInit(): void {
@@ -150,5 +157,30 @@ export class AdminUsersComponent implements OnInit {
 
     // console.log(this.fakeUsers.sort((a,b) => (a.lastname > b.lastname) ? 1: -1));
     // console.log(this.fakeUsers.sort((a,b) => (a.role > b.role) ? 1: -1));
+  }
+
+  toggleExpandUser(){
+    this.expandUser = !this.expandUser;
+    console.log(this.expandUser);
+
+  }
+
+  getInfo(picked: User){
+
+    this.chosenUser = picked;
+
+    this.chosenUserInfo = new Information(
+      0,
+      "***-**-****",
+      "123 Red St.",
+      "New York",
+      "NY",
+      "12362",
+      "7149001234",
+      "this@example.com",
+      null
+    );
+
+    this.expandUser = true;
   }
 }
