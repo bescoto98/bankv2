@@ -64,7 +64,7 @@
       <th scope="col">Current Balance</th>
     </tr>
   </thead>
-  <tbody *ngFor="let account of allaccounts">
+  <tbody *ngFor="let account of listDisplayed">
     <tr>
       <td>{{account.accountid}}</td>
       <td>{{account.owner.userid}}</td>
@@ -72,7 +72,7 @@
       <td>{{account.status}}</td>
       <td>{{account.approvedby}}</td>
       <td>{{account.createdon}}</td>
-      <td>{{account.balance}}</td>
+      <td>${{account.balance}} USD</td>
     </tr>
   </tbody>
 </table>

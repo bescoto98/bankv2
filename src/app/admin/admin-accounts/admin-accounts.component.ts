@@ -22,7 +22,7 @@ export class AdminAccountsComponent implements OnInit {
         "accountid": 107,
         "balance": 500.0,
         "type": "CHECKING",
-        "status": "OPEN",
+        "status": "CLOSED",
         "approvedby": "Eagan Short",
         "createdon": "10-15-2015",
         "owner": {
@@ -70,7 +70,7 @@ export class AdminAccountsComponent implements OnInit {
         "accountid": 110,
         "balance": 4568.44,
         "type": "SAVINGS",
-        "status": "OPEN",
+        "status": "CLOSED",
         "approvedby": "Carl Burgess",
         "createdon": "03-25-2014",
         "owner": {
@@ -86,7 +86,7 @@ export class AdminAccountsComponent implements OnInit {
         "accountid": 111,
         "balance": 45683.45,
         "type": "CHECKING",
-        "status": "OPEN",
+        "status": "CLOSED",
         "approvedby": "Philip Bauer",
         "createdon": "02-23-2016",
         "owner": {
@@ -131,6 +131,7 @@ export class AdminAccountsComponent implements OnInit {
         }
     }
 ];
+  listDisplayed;
 
   showChecking: boolean = true;
   showSavings: boolean = true;
@@ -140,17 +141,43 @@ export class AdminAccountsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.listDisplayed = this.allaccounts;
   }
 
   goSort() {
-    console.log(this.sortBy);
+    // console.log(this.sortBy);
+    switch(this.sortBy){
+      case 1:
+        this.listDisplayed.sort((a,b) => (a.accountid > b.accountid) ? 1: -1);
+        break;
+      case 2:
+        this.listDisplayed.sort((a,b) => (a.owner.userid > b.owner.userid) ? 1: -1);
+        break;
+      case 3:
+        this.listDisplayed.sort((a,b) => (a.approvedby > b.approvedby) ? 1: -1);
+        break;
+    }
   }
 
   filterValues() {
-    console.log(this.showChecking);
-    console.log(this.showSavings);
-    console.log(this.showOpen);
-    console.log(this.showClosed);
+    this.listDisplayed = this.allaccounts.filter(temp => {
+          if(temp.status=="CLOSED"&&this.showClosed==false){
+            return false;
+          }
+          else if(temp.status=="OPEN"&&this.showOpen==false){
+            return false;
+          }
+          else if(temp.type=="CHECKING"&&this.showChecking==false){
+            return false;
+          }
+          else if(temp.type=="SAVINGS"&&this.showSavings==false){
+            return false;
+          }
+          return true;
+        }
+    );
   }
+
+
 
 }
