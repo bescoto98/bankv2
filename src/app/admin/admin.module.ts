@@ -9,10 +9,11 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminInfoComponent } from './admin-info/admin-info.component';
 import { AdminDashComponent } from './admin-dash/admin-dash.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { AdminUserSearchComponent } from './admin-user-search/admin-user-search.component';
 
 
 @NgModule({
-  declarations: [AdminRootComponent, AdminAccountsComponent, AdminUsersComponent, AdminInfoComponent, AdminDashComponent, AdminNavComponent],
+  declarations: [AdminRootComponent, AdminAccountsComponent, AdminUsersComponent, AdminInfoComponent, AdminDashComponent, AdminNavComponent, AdminUserSearchComponent],
   imports: [
     CommonModule,
     FormsModule,

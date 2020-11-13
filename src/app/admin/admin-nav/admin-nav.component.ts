@@ -27,7 +27,11 @@ export class AdminNavComponent implements OnInit {
   }
 
   goInfo(){
+    this.router.navigate(['a','info']);
+  }
 
+  goSearch() {
+    this.router.navigate(['a','search']);
   }
 
   logout() {

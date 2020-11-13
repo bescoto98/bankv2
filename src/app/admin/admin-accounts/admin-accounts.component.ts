@@ -145,7 +145,7 @@ export class AdminAccountsComponent implements OnInit {
   }
 
   goSort() {
-    // console.log(this.sortBy);
+
     switch(this.sortBy){
       case 1:
         this.listDisplayed.sort((a,b) => (a.accountid > b.accountid) ? 1: -1);

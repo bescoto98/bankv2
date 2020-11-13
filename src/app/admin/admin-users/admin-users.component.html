@@ -4,20 +4,26 @@
   <!-- sort -->
   <div class="card p-3 text-center">
     <h4 class="card-header text-info">Sort</h4>
-      <select class="btn btn-outline-light dropdown-toggle m-2" [(ngModel)]="sortBy" (change)="goSort()">
-        <option *ngFor="let s of sortByValues" [ngValue]="s.val">{{s.type}}</option>
-    </select>
+    <div class="card-body bg-light">
+      <select class="btn btn-outline-light dropdown-toggle w-50 border border-dark" [(ngModel)]="sortBy" (change)="goSort()">
+      <option *ngFor="let s of sortByValues" [ngValue]="s.val">{{s.type}}</option>
+      </select>
+    </div>
+    <p class="card-footer text-info">Hover over column names for more information.</p>
   </div>
 
 </div>
 <!-- table -->
 <table class="table table-bordered w-75 m-5 mx-auto">
-  <thead class="thead-dark">
+  <thead class="thead-dark text-center">
     <tr>
       <th scope="col">User ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Username</th>
-      <th scope="col">Role</th>
+      <!-- <th scope="col">Name</th> -->
+      <th><a href="#" title="User's Last Name, First Name" class="text-light">Name</a></th>
+      <!-- <th scope="col">Username</th> -->
+      <th><a href="#" title="User's chosen username in the system" class="text-light">Username</a></th>
+      <!-- <th scope="col">Role</th> -->
+      <th><a href="#" title="Either EMPLOYEE or CUSTOMER" class="text-light">Role</a></th>
     </tr>
   </thead>
   <tbody *ngFor="let user of listDisplayed">
