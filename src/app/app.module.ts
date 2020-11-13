@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { LandingModule } from '@landing/landing.module';
 import { AdminModule } from './admin/admin.module';
+import { EmployeeModule } from './employee/employee.module';
+import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { AdminModule } from './admin/admin.module';
     // order by how you want it to hit
     LandingModule,
     AdminModule,
-    AppRoutingModule
+    AppRoutingModule,
+    EmployeeModule,
+    CustomerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
