@@ -1,0 +1,83 @@
+<!-- filters -->
+<div class="row m-2">
+  <!-- sort -->
+  <div class="col-6">
+    <div class="card p-3 text-center ml-4">
+      <h4 class="card-header text-info">Sort</h4>
+      <div class="card-body bg-light">
+        <select class="btn btn-outline-light dropdown-toggle m-2 w-50 border border-dark" [(ngModel)]="sortBy" (change)="goSort()">
+          <option *ngFor="let s of sortByValues" [ngValue]="s.val">{{s.type}}</option>
+        </select>
+      </div>
+      <p class="card-footer text-info">Hover over column names for more information.</p>
+    </div>
+  </div>
+
+  <!-- filter -->
+  <div class="col-6">
+    <div class="card p-3 mr-4">
+      <h4 class="card-header text-info text-center">Filter</h4>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <!-- type: checking | savings -->
+            <p>Type:</p>
+              <div class="row justify-content-center">
+                <div class="col-sm-4">
+                <input type="checkbox" class="form-check-input" id="checkingBox" [(ngModel)]="showChecking" checked>
+                <label class="form-check-label" for="checkBox">Checking</label>
+                </div>
+                <div class="col-sm-4">
+              <input type="checkbox" class="form-check-input" id="savingBox" [(ngModel)]="showSavings" checked>
+              <label class="form-check-label" for="savingBox">Savings</label>
+                </div>
+              </div>
+          </li>
+          <li class="list-group-item">
+            <!-- status: open | closed -->
+            <p>Status:</p>
+              <div class="row justify-content-center">
+                <div class="col-sm-4">
+                  <input type="checkbox" class="form-check-input" id="openBox" [(ngModel)]="showOpen" checked>
+                  <label class="form-check-label" for="openBox">Open</label>
+                </div>
+                <div class="col-sm-4">
+                  <input type="checkbox" class="form-check-input" id="closedBox" [(ngModel)]="showClosed" checked>
+                  <label class="form-check-label" for="closedBox">Closed</label>
+                </div>
+              </div>
+          </li>
+        </ul>
+        <!-- apply filters -->
+        <div class="card-footer text-center">
+          <button type="button" name="button" class="btn btn-info" id="applyFilterButton" (click)="filterValues()" >Apply</button>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- table -->
+<table class="table table-bordered w-75 m-5 mx-auto">
+  <thead class="thead-dark text-center">
+    <tr>
+      <!-- since tooltip requires popper.js
+      which isn't working, link hover text mocks it -->
+      <th><a href="#" title="Unique identifier for the account" class="text-light">Account ID</a></th>
+      <th><a href="#" title="Unique identifier for the user" class="text-light">Owner ID</a></th>
+      <th><a href="#" title="Either CHECKING or SAVINGS" class="text-light">Account Type</a></th>
+      <th><a href="#" title="Either OPEN or CLOSED" class="text-light">Status</a></th>
+      <th><a href="#" title="Name of employee who approved the account creation" class="text-light">Approved By</a></th>
+      <th><a href="#" title="Date the account was created" class="text-light">Date Created</a></th>
+      <th><a href="#" title="Most recent balance retrieved" class="text-light">Current Balance</a></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let account of listDisplayed">
+    <tr>
+      <td>{{account.accountid}}</td>
+      <td>{{account.owner.userid}}</td>
+      <td>{{account.type}}</td>
+      <td>{{account.status}}</td>
+      <td>{{account.approvedby}}</td>
+      <td>{{account.createdon}}</td>
+      <td>${{account.balance}} USD</td>
+    </tr>
+  </tbody>
+</table>

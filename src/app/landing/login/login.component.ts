@@ -17,4 +17,12 @@ export class LoginComponent implements OnInit {
   aDash() {
     this.router.navigate(['a']);
   }
+
+  eDash() {
+    this.router.navigate(['e']);
+  }
+
+  cDash() {
+    this.router.navigate(['c']);
+  }
 }

@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,7 @@ import { CustomerModule } from './customer/customer.module';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    CommonModule,
     // order by how you want it to hit
     LandingModule,
     AdminModule,

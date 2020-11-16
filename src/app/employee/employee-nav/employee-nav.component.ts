@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-employee-nav',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goDash() {
+    this.router.navigate(['e']);
+  }
+
+  goAccounts() {
+    this.router.navigate(['e','accounts']);
+  }
+
+  goInfo() {
+    this.router.navigate(['e', 'info']);
+  }
+
+  logout() {
+    this.router.navigate(['home']);
   }
 
 }
