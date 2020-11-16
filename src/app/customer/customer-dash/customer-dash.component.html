@@ -1,1 +1,21 @@
-<p>customer-dash works!</p>
+<div *ngFor="let account of testAccounts">
+  <div class="card p-3 m-3 w-50 mx-auto text-center">
+    <h3 class="card-header text-info">#{{account.accountid}} | {{account.status}}</h3>
+    <div class="card-body bg-light">
+      <div class="row">
+        <div class="col bg-info text-white rounded m-2">
+          <h5 class="card-title">Balance</h5>
+          <p class="card-text">${{account.balance}}</p>
+        </div>
+        <div class="col bg-info text-white rounded m-2">
+          <h5 class="card-title">Type</h5>
+          <p class="card-text">{{account.type}}</p>
+        </div>
+        <div class="col bg-info text-white rounded m-2">
+          <h5 class="card-title">Since</h5>
+          <p class="card-text">{{account.createdon}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

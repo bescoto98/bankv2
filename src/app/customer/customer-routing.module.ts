@@ -13,7 +13,8 @@ const customerRoutes: Routes = [
     children:
     [
       { path: '', component: CustomerDashComponent },
-      { path: 'info', component: CustomerInfoComponent }
+      { path: 'info', component: CustomerInfoComponent },
+      { path: 'atm', component: CustomerTransactionComponent}
     ]
   }
 ];
