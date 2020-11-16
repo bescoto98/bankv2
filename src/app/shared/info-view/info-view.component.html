@@ -1,1 +1,95 @@
-<p>info-ciew works!</p>
+<div class="row m-2">
+  <!-- personal info -->
+  <div class="col-6">
+    <div class="card p-3">
+      <h4 class="card-header text-info text-center">Personal Details</h4>
+      <div class="card-body bg-light">
+
+        <!-- name -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="">Full name:</span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="testInfo.owner.firstname" #name="ngModel" [disabled]="personalReadOnly">
+          <input type="text" class="form-control" [(ngModel)]="testInfo.owner.lastname" #name="ngModel" [disabled]="personalReadOnly">
+        </div>
+
+        <!-- username -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Username: </span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="testInfo.owner.username" #name="ngModel" [disabled]="personalReadOnly">
+        </div>
+
+        <!-- email -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Email: </span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="testInfo.email" #name="ngModel" [disabled]="personalReadOnly">
+        </div>
+
+        <!-- phone -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">#: </span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="testInfo.phone" #name="ngModel" [disabled]="personalReadOnly">
+        </div>
+
+        <!-- ssn -->
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">SSN: </span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="testInfo.ssn" #name="ngModel" [disabled]="personalReadOnly">
+        </div>
+
+      </div>
+
+      <!-- edit button -->
+      <div class="card-footer text-center" *ngIf="personalReadOnly">
+        <button type="button" name="button" class="btn btn-warning w-75" (click)="editPersonal()" >Edit</button>
+      </div>
+
+      <!-- save button -->
+      <div class="card-footer text-center" *ngIf="!personalReadOnly">
+        <button type="button" name="button" class="btn btn-success w-75" (click)="savePersonal()" >Save changes</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- address -->
+  <div class="col-6">
+    <div class="card p-3">
+      <h4 class="card-header text-info text-center">Address</h4>
+      <div class="card-body bg-light">
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="">Address:</span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="testInfo.address" #name="ngModel" [disabled]="addressReadOnly">
+          <input type="text" class="form-control" [(ngModel)]="testInfo.city" #name="ngModel" [disabled]="addressReadOnly">
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" [(ngModel)]="testInfo.state" #name="ngModel" [disabled]="addressReadOnly">
+          <input type="text" class="form-control" [(ngModel)]="testInfo.zip" #name="ngModel" [disabled]="addressReadOnly">
+        </div>
+
+      </div>
+
+      <div class="card-footer text-center" *ngIf="addressReadOnly">
+        <button type="button" name="button" class="btn btn-warning w-75" (click)="editAddress()" >Edit</button>
+      </div>
+
+      <!-- save button -->
+      <div class="card-footer text-center" *ngIf="!addressReadOnly">
+        <button type="button" name="button" class="btn btn-success w-75" (click)="saveAddress()" >Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
