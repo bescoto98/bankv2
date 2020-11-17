@@ -23,20 +23,50 @@
       </div>
     </div>
   </div>
-  <!-- body -->
-  <div class="card-body">
+  <!-- withdraw/deposit body -->
+  <div class="card-body mx-auto" *ngIf="!isTransfer">
     <!-- account -->
-    <label for="accountSelect" class="form-check-label">Choose an account</label>
-    <select class="btn btn-outline-light dropdown-toggle m-2 w-50 border border-dark" name="accountSelect">
-      <option>This</option>
-      <option>That</option>
+    <label for="accountSelect" class="form-check-label">Choose an account:</label>
+    <select class="btn btn-outline-light dropdown-toggle m-2 border border-muted" name="accountSelect" [(ngModel)]="accountSelected" (change)="selectAccount()">
+      <option *ngFor="let account of testAccounts" [ngValue]="account.accountid">{{account.type}} - #{{account.accountid}} </option>
     </select>
     <!-- amount -->
-    <div class="input-group w-25">
+    <div class="input-group m-2">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Amount</span>
+      </div>
       <div class="input-group-prepend">
         <span class="input-group-text">$</span>
       </div>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" [(ngModel)]="amount">
+    </div>
+  </div>
+
+  <!-- transfer body -->
+  <div class="card-body mx-auto" *ngIf="isTransfer">
+    <!-- account -->
+    <p>Choose Accounts</p>
+    <!-- from -->
+    <label for="accountSelect" class="form-check-label">From:</label>
+    <select class="btn btn-outline-light dropdown-toggle m-2 border border-muted" name="accountSelect" [(ngModel)]="accountSelected" (change)="selectAccount()">
+      <option *ngFor="let account of testAccounts" [ngValue]="account.accountid">{{account.type}} - #{{account.accountid}} </option>
+    </select>
+    <!-- to -->
+    <div class="input-group m-2">
+      <div class="input-group-prepend">
+        <span class="input-group-text">To:</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="toAccount" placeholder="Enter account number">
+    </div>
+    <!-- amount -->
+    <div class="input-group m-2">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Amount</span>
+      </div>
+      <div class="input-group-prepend">
+        <span class="input-group-text">$</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="amount">
     </div>
   </div>
 </div>
