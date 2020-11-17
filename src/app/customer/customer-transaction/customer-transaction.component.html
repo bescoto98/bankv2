@@ -1,1 +1,42 @@
-<p>customer-transaction works!</p>
+<div class="card mx-auto m-2 p-2 w-75 text-center">
+  <!-- tabs -->
+  <div class="card-header">
+    <div class="row">
+      <!-- withdraw -->
+      <div class="col">
+        <div
+        [ngClass]=
+        "{ 'border-info border-bottom border-3':isWithdraw }"
+        (click)="changeTab('w')">Withdraw</div>
+      </div>
+      <!-- deposit -->
+      <div class="col">
+        <div [ngClass]=
+        "{ 'border-info border-bottom border-3':isDeposit }"
+        (click)="changeTab('d')">Deposit</div>
+      </div>
+      <!-- transfer -->
+      <div class="col">
+        <div [ngClass]=
+        "{ 'border-info border-bottom border-3':isTransfer }"
+        (click)="changeTab('t')">Transfer</div>
+      </div>
+    </div>
+  </div>
+  <!-- body -->
+  <div class="card-body">
+    <!-- account -->
+    <label for="accountSelect" class="form-check-label">Choose an account</label>
+    <select class="btn btn-outline-light dropdown-toggle m-2 w-50 border border-dark" name="accountSelect">
+      <option>This</option>
+      <option>That</option>
+    </select>
+    <!-- amount -->
+    <div class="input-group w-25">
+      <div class="input-group-prepend">
+        <span class="input-group-text">$</span>
+      </div>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+</div>
