@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminUserSearchComponent implements OnInit {
 
+  useID: boolean = false;
+  useName: boolean = false;
+  useSSN: boolean = false;
+  usePhone: boolean = false;
+  useEmail: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

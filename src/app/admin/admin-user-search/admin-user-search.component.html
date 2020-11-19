@@ -1,1 +1,77 @@
-<p>admin-user-search works!</p>
+<div class="card text-center m-2 w-75 mx-auto">
+  <div class="card-header">
+    <h2 class="card-title text-info">Search for users</h2>
+  </div>
+  <div class="card-body">
+  <!-- search filters   -->
+  <div class="row">
+    <!-- id -->
+    <div class="col">
+      <input type="checkbox" name="includeID" [(ngModel)]="useID" class="m-2">
+      <label for="includeID">ID</label>
+    </div>
+    <!-- name -->
+    <div class="col">
+      <input type="checkbox" name="includeName" [(ngModel)]="useName" class="m-2">
+      <label for="includeName">Name</label>
+    </div>
+    <!-- ssn -->
+    <div class="col">
+      <input type="checkbox" name="includeSSN" [(ngModel)]="useSSN" class="m-2">
+      <label for="includeSSN">SSN</label>
+    </div>
+    <!-- phone -->
+    <div class="col">
+      <input type="checkbox" name="includePhone" [(ngModel)]="usePhone" class="m-2">
+      <label for="includePhone">Phone</label>
+    </div>
+    <!-- email -->
+    <div class="col">
+      <input type="checkbox" name="includeEmail" [(ngModel)]="useEmail" class="m-2">
+      <label for="includeEmail">Email</label>
+    </div>
+  </div>
+
+
+  <!-- search inputs -->
+    <!-- userid -->
+    <div class="input-group m-2" *ngIf="useID">
+      <div class="input-group-prepend">
+        <span class="input-group-text">User ID:</span>
+      </div>
+      <input type="text" class="form-control">
+    </div>
+    <!-- name -->
+    <div class="input-group m-2" *ngIf="useName">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Full name:</span>
+      </div>
+      <input type="text" class="form-control">
+      <input type="text" class="form-control">
+    </div>
+    <!-- ssn -->
+    <div class="input-group m-2" *ngIf="useSSN">
+      <div class="input-group-prepend">
+        <span class="input-group-text">SSN:</span>
+      </div>
+      <input type="text" class="form-control" placeholder="(Last 4 digits)">
+    </div>
+    <!-- phone -->
+    <div class="input-group m-2" *ngIf="usePhone">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Phone number:</span>
+      </div>
+      <input type="text" class="form-control" placeholder="No special characters">
+    </div>
+    <!-- email -->
+    <div class="input-group m-2" *ngIf="useEmail">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Email:</span>
+      </div>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="card-footer">
+    <button type="button" name="button" class="btn btn-info">Search</button>
+  </div>
+</div>

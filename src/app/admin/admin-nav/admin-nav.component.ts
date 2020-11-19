@@ -8,29 +8,36 @@ import { Router } from "@angular/router";
 })
 export class AdminNavComponent implements OnInit {
 
+  showUsers: boolean = true;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   goDash() {
+    this.showUsers = true;
     this.router.navigate(['a']);
 
   }
 
   goUsers(usertype:string) {
+    this.showUsers = false;
     this.router.navigate(['a/user',usertype]);
   }
 
   goAccounts() {
+    this.showUsers = true;
     this.router.navigate(['a','accounts']);
   }
 
   goInfo(){
+    this.showUsers = true;
     this.router.navigate(['a','info']);
   }
 
   goSearch() {
+    this.showUsers = false;
     this.router.navigate(['a','search']);
   }
 

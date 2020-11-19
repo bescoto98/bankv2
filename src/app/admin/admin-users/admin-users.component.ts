@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { User } from '@models/user';
 import { Information } from '@models/information';
 
@@ -10,6 +12,8 @@ import { Information } from '@models/information';
   styleUrls: ['./admin-users.component.css']
 })
 export class AdminUsersComponent implements OnInit {
+
+  closeResult = '';
 
   usertype;
 
@@ -125,13 +129,11 @@ export class AdminUsersComponent implements OnInit {
 
   chosenUser;
   chosenUserInfo;
-  expandUser: boolean = false;
 
-  constructor(private route: ActivatedRoute)
+  constructor(private route: ActivatedRoute, private modalService: NgbModal)
   { this.route.params.subscribe( params => this.usertype = params.utype ); }
 
   ngOnInit(): void {
-    // console.log(this.usertype);
 
     switch (this.usertype) {
       case "e":
@@ -159,12 +161,6 @@ export class AdminUsersComponent implements OnInit {
     // console.log(this.fakeUsers.sort((a,b) => (a.role > b.role) ? 1: -1));
   }
 
-  toggleExpandUser(){
-    this.expandUser = !this.expandUser;
-    console.log(this.expandUser);
-
-  }
-
   getInfo(picked: User){
 
     this.chosenUser = picked;
@@ -181,6 +177,26 @@ export class AdminUsersComponent implements OnInit {
       null
     );
 
-    this.expandUser = true;
+    // console.log(this.chosenUser);
+    // open(content);
+  }
+
+  open(picked: User, content) {
+
+    this.chosenUser = picked;
+
+    this.chosenUserInfo = new Information(
+      0,
+      "***-**-****",
+      "123 Red St.",
+      "New York",
+      "NY",
+      "12362",
+      "7149001234",
+      "this@example.com",
+      null
+    );
+
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
   }
 }

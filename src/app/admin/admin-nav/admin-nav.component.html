@@ -6,7 +6,7 @@
       <li class="nav-item active">
         <button type="button" name="button" class="btn btn-info mr-2" (click)="goDash()">Dashboard</button>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="showUsers">
         <!-- <button type="button" name="button" class="btn btn-info mr-2" (click)="goUsers()">View Users</button> -->
         <select class="btn btn-info dropdown-toggle mr-2">
           <!-- <option *ngFor="let s of sortByValues" [ngValue]="s.val">{{s.type}}</option> -->
