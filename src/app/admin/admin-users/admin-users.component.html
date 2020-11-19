@@ -37,7 +37,6 @@
 </table>
 
 <!-- modal: https://ng-bootstrap.github.io/#/components/modal/examples -->
-
 <ng-template #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">#{{chosenUser.userid}} | {{chosenUser.role}}</h4>
@@ -46,19 +45,50 @@
     </button>
   </div>
   <div class="modal-body">
-    <p>{{chosenUser.lastname}}, {{chosenUser.firstname}}</p>
-    <p>{{chosenUserInfo.email}}</p>
-    <p>{{chosenUserInfo.phone}}</p>
-    <p>{{chosenUserInfo.ssn}}</p>
-    <p>{{chosenUserInfo.address}}, {{chosenUserInfo.city}} {{chosenUserInfo.state}} {{chosenUserInfo.zip}}</p>
+    <!-- name -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Full name:</span>
+      </div>
+      <input type="text" class="form-control" placeholder="{{chosenUser.lastname}}" disabled>
+      <input type="text" class="form-control" placeholder="{{chosenUser.firstname}}" disabled>
+    </div>
+    <!-- email -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Email:</span>
+      </div>
+      <input type="text" class="form-control" placeholder="{{chosenUserInfo.email}}" disabled>
+    </div>
+    <!-- phone -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Phone:</span>
+      </div>
+      <input type="text" class="form-control" placeholder="{{chosenUserInfo.phone}}" disabled>
+    </div>
+    <!-- ssn -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">SSN:</span>
+      </div>
+      <input type="text" class="form-control" placeholder="{{chosenUserInfo.ssn}}" disabled>
+    </div>
+    <!-- address -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Address:</span>
+      </div>
+      <input type="text" class="form-control" disabled  placeholder="{{chosenUserInfo.address}}">
+      <input type="text" class="form-control" disabled  placeholder="{{chosenUserInfo.city}}">
+    </div>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" disabled  placeholder="{{chosenUserInfo.state}}">
+      <input type="text" class="form-control" disabled  placeholder="{{chosenUserInfo.zip}}">
+    </div>
   </div>
+  <!-- close button -->
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    <button type="button" class="btn btn-success" (click)="modal.close()">Close</button>
   </div>
 </ng-template>
-
-<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
-
-<!-- <hr>
-
-<pre>{{ closeResult }}</pre> -->

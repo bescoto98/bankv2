@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Account } from '@models/account';
-import { User } from '@models/user';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-admin-accounts',
@@ -10,10 +8,14 @@ import { User } from '@models/user';
 })
 export class AdminAccountsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
+  }
+
+  seePending() {
+    this.router.navigate(['a','pending']);
   }
 
 }

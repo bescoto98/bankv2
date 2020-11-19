@@ -13,8 +13,6 @@ import { Information } from '@models/information';
 })
 export class AdminUsersComponent implements OnInit {
 
-  closeResult = '';
-
   usertype;
 
   sortBy;
@@ -178,7 +176,6 @@ export class AdminUsersComponent implements OnInit {
     );
 
     // console.log(this.chosenUser);
-    // open(content);
   }
 
   open(picked: User, content) {

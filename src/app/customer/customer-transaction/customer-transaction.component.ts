@@ -17,7 +17,7 @@ export class CustomerTransactionComponent implements OnInit {
         "accountid": 107,
         "balance": 500.0,
         "type": "CHECKING",
-        "status": "OPEN",
+        "status": "CLOSED",
         "approvedby": "Eagan Short",
         "createdon": "10-15-2015",
         "owner": {

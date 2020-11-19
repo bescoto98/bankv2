@@ -12,10 +12,11 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { AdminUserSearchComponent } from './admin-user-search/admin-user-search.component';
 
 import { SharedModule } from '../shared/shared.module';
+import { AdminPendingComponent } from './admin-pending/admin-pending.component';
 
 
 @NgModule({
-  declarations: [AdminRootComponent, AdminAccountsComponent, AdminUsersComponent, AdminInfoComponent, AdminDashComponent, AdminNavComponent, AdminUserSearchComponent],
+  declarations: [AdminRootComponent, AdminAccountsComponent, AdminUsersComponent, AdminInfoComponent, AdminDashComponent, AdminNavComponent, AdminUserSearchComponent, AdminPendingComponent],
   imports: [
     CommonModule,
     FormsModule,

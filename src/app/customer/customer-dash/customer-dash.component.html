@@ -1,6 +1,9 @@
 <div *ngFor="let account of testAccounts">
   <div class="card p-3 m-3 w-50 mx-auto text-center">
-    <h3 class="card-header text-info">#{{account.accountid}} | {{account.status}}</h3>
+    <span class="card-header">
+      <h3
+      [ngClass]="{ 'text-info': account.status==='OPEN', 'text-danger': account.status==='CLOSED'}">#{{account.accountid}} | {{account.status}}</h3>
+    </span>
     <div class="card-body bg-light">
       <div class="row">
         <div class="col bg-info text-white rounded m-2">

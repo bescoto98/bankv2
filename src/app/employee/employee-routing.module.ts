@@ -5,6 +5,7 @@ import { EmployeeRootComponent } from './employee-root/employee-root.component';
 import { EmployeeDashComponent } from './employee-dash/employee-dash.component';
 import { EmployeeAccountsComponent } from './employee-accounts/employee-accounts.component';
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
+import { EmployeePendingComponent } from './employee-pending/employee-pending.component';
 
 const employeeRoutes: Routes = [
   {
@@ -13,7 +14,8 @@ const employeeRoutes: Routes = [
     [
       { path: '', component: EmployeeDashComponent },
       { path: 'accounts', component: EmployeeAccountsComponent },
-      { path: 'info', component: EmployeeInfoComponent }
+      { path: 'info', component: EmployeeInfoComponent },
+      { path: 'pending', component: EmployeePendingComponent }
     ]
   }
 ];

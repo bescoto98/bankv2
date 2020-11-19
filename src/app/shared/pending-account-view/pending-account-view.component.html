@@ -1,0 +1,70 @@
+<div class="card p-3 text-center m-5 bg-light w-50 mx-auto">
+  <h3 class="card-header text-info">Pending Accounts</h3>
+  <div class="card-body">
+    Click on an account to approve or deny the request.
+  </div>
+</div>
+
+
+<!-- table -->
+<table class="table table-bordered w-75 m-5 mx-auto">
+  <thead class="thead-dark text-center">
+    <tr>
+      <!-- since tooltip requires popper.js
+      which isn't working, link hover text mocks it -->
+      <th><a href="#" title="Unique identifier for the account" class="text-light">Account ID</a></th>
+      <th><a href="#" title="Unique identifier for the user" class="text-light">Owner ID</a></th>
+      <th><a href="#" title="Either CHECKING or SAVINGS" class="text-light">Account Type</a></th>
+      <th><a href="#" title="All accounts will be PENDING" class="text-light">Status</a></th>
+      <th><a href="#" title="Account owner full name" class="text-light">Owner's Name</a></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let account of pendingAccounts">
+    <tr (click)="viewAccountDetail(account,content)">
+      <td>{{account.accountid}}</td>
+      <td>{{account.owner.userid}}</td>
+      <td>{{account.type}}</td>
+      <td>{{account.status}}</td>
+      <td>{{account.owner.lastname}}, {{account.owner.firstname}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title"></h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- acct id -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Account #</span>
+      </div>
+      <input type="text" class="form-control" placeholder="{{focused.accountid}}" disabled>
+    </div>
+    <!-- userid -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">User</span>
+      </div>
+      <input type="text" class="form-control" placeholder="{{focused.owner.userid}}" disabled>
+      <input type="text" class="form-control" placeholder="{{focused.owner.lastname}}" disabled>
+      <input type="text" class="form-control" placeholder="{{focused.owner.firstname}}" disabled>
+    </div>
+    <!-- type -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Type</span>
+      </div>
+      <input type="text" class="form-control" placeholder="{{focused.type}}" disabled>
+    </div>
+  </div>
+  <div class="modal-footer text-center">
+    <button type="button" name="button" class="btn btn-success">Approve</button>
+    <button type="button" name="button" class="btn btn-danger">Deny</button>
+    <button type="button" class="btn btn-secondary" (click)="modal.close()">Close</button>
+  </div>
+</ng-template>
