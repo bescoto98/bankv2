@@ -7,15 +7,19 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { LandingRoutingModule } from './landing-routing.module';
+import { LandingRootComponent } from './landing-root/landing-root.component';
+
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, RegisterComponent, LoginComponent, HomeNavbarComponent],
+  declarations: [HomeComponent, RegisterComponent, LoginComponent, HomeNavbarComponent, LandingRootComponent],
   imports: [
     CommonModule,
     FormsModule,
-    LandingRoutingModule
+    LandingRoutingModule,
+    SharedModule
   ]
 })
 export class LandingModule { }

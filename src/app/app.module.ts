@@ -26,11 +26,11 @@ import { CustomerModule } from './customer/customer.module';
     ReactiveFormsModule,
     CommonModule,
     // order by how you want it to hit
-    LandingModule,
     AdminModule,
-    AppRoutingModule,
     EmployeeModule,
-    CustomerModule
+    CustomerModule,
+    AppRoutingModule,
+    LandingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
